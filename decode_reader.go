@@ -66,9 +66,10 @@ func (w *window) reset(log2size uint, clear bool) {
 		w.buf = b
 		w.mask = size - 1
 	} else if clear {
-		for i := range w.buf {
+		/*for i := range w.buf {
 			w.buf[i] = 0
-		}
+		}*/
+		w.buf = make([]byte, len(w.buf))
 		w.w = 0
 	}
 	w.r = w.w
